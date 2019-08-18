@@ -1,0 +1,47 @@
+﻿
+- Any user can create a filter based on certain criterias
+- this filter needs to be saved 
+- the filter can be used by any other user (there are no permissions)
+- the filter can be applied
+
+
+What I need to do: 
+
+1. Set up the methods
+        - get
+        - post
+        - put (for some reason not working yet, look at that later)
+        - delete
+
+ These methods represend the creation, the saving, the updating and deleting the filters. 
+
+
+2. Set up a nicer UI for the filters
+    - create a http page that looks good
+    - create forms using react that will "post" all the form data in the according json format to be stored 
+    - specify the categories part (start and end date, campaign, platforms and content 
+
+
+3. Create some sample data to apply the filters on
+    - create a json file that contains: 
+        - must have
+            - a DateTime for dateCreated
+
+        - optional
+            - string as content
+            - string campaign name
+            - string[] of platforms it is going to be posted at
+ 
+4. Apply the filters to the data (this might be not very "efficient"
+    - if the filter has the start and end date set, check if the dateCreated is in between. Show all the results that fit
+    - if the filter has a campaign name set, select the items that contain the campaing name (String.Contains() Method)
+    - if the filter has a content string set, select the items that contain this string in the content (String.Contains() Method)
+    - if the filter has one or more items in the array of strings platforms, select the items that contains one or more of these strings in the platform field (String.Contains() Method)
+
+
+5. Set different Users and the according tables
+    - each user can have their own list of filters they created themselves
+    - each user can post an individual filter to a public list
+    - each user can use a filter from a public filter
+
+ This would represent the sharing part of the filters
